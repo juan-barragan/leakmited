@@ -17,14 +17,14 @@ import shapefile
 import matplotlib.pyplot as plt
 
 
-sf=shapefile.Reader('regions-20180101-shp/regions-20180101.shp')
+sf=shapefile.Reader('departements-20180101-shp/departements-20180101.shp')
 fig = plt.figure() 
-ax = fig.gca() 
+ax = fig.gca()  
 for poly in sf.shapes():
     poly_geo=poly.__geo_interface__
 
     ax.add_patch(PolygonPatch(poly_geo, fc='#ffffff', ec='#FF0000', alpha=0.5, zorder=2 ))
-
+     
 poly_geo =      {
          "type": "Polygon",
          "coordinates": [[
